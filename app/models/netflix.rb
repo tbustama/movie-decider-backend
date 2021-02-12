@@ -3,20 +3,16 @@ class Netflix < ApplicationRecord
         all = Netflix.all
         series = all.select{|netflix| netflix.vtype == 'series'}
         sorted_series = series.sort_by{|show| show.rating}.reverse
-        sorted_series.each do |show|
-            Show.create(title: show['title'], synopsis: show['synopsis'], vtype: show['vtype'], image: show['image'], year: show['year'], genre: show['genre'], rating: show['rating'], imdbrated: show['imdbrated'])
-        end
-        return sorted_series[0]
+        
+        return sorted_series.length
     end
 
     def self.movies
         all = Netflix.all
         movies = all.select{|netflix| netflix.vtype == 'movie'}
         sorted_movies = movies.sort_by{|movie| movie.rating }.reverse
-        sorted_movies.each do |movie|
-            Movie.create(title: movie['title'], synopsis: movie['synopsis'], vtype: movie['vtype'], image: movie['image'], year: movie['year'], genre: movie['genre'], rating: movie['rating'], imdbrated: movie['imdbrated'])
-        end
-        return sorted_movies[0]
+       
+        return sorted_movies.length
     end
 
     def self.update

@@ -10,7 +10,6 @@ require 'net/http'
 require 'openssl'
 require 'json'
 require_relative 'ids.rb'
-require 'pry'
 require_relative '../config/environment.rb'
 
 thousand.each{|id| 
