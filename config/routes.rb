@@ -2,12 +2,13 @@ Rails.application.routes.draw do
   resources :likes
   resources :movies
   resources :shows
-  resources :users
+  post '/delete_like', to: 'likes#delete_like'
   post '/signin', to: 'users#signin'
   # resources :netflixes
   namespace :api do
     namespace :v1 do
       # resources :users, only: [:create]
+      patch '/editname', to: 'users#update'
       post '/signup', to: 'users#create'
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'

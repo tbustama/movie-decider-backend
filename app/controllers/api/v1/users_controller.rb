@@ -24,13 +24,14 @@ class Api::V1::UsersController < ApplicationController
     # end
   end
 
+  def update 
+    @user = User.find(params[:user_id])
+    @user.update(username: params[:username])
+  end
+
   def index
     users = User.all
     render json: users
-  end
-  
-  def authorized
-    render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
   end
 
   def profile
