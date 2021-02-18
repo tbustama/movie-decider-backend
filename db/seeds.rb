@@ -12,7 +12,7 @@ require 'json'
 require_relative 'ids.rb'
 require_relative '../config/environment.rb'
 
-thousand.each{|id| 
+seventeen.each{|id| 
     url = URI("https://unogsng.p.rapidapi.com/title?netflixid=#{id}")
 
     http = Net::HTTP.new(url.host, url.port)
