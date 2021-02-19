@@ -1,12 +1,12 @@
 # Notflix Backend
 
-This is a to-do list and general note-taking application with a calendar that provides a visual indication of the priority levels and summed duration of tasks on a given day.
+This repository is the backend for our Notflix recommendation app.
 
 ## Prerequisites
 
 This app is built using a Ruby-on-Rails backend as an API. You will need to have installed Ruby (we used 2.6.3) and Rails (6.0+).
 
-## How to Install
+## How to Install and seed Database
 
 In the terminal run bundle install to make sure that your Gemfile.lock has all of the necessary dependencies. You then will need to seed the database.
 
